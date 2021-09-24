@@ -12,7 +12,7 @@ third = ["Злые языки могут говорить вам обратное, но сегодня их слушать не нужно
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     # Если написали «Привет»
-    if message.text == "Привет":
+    if message.text.lower() == "привет":
         # Пишем приветствие
         bot.send_message(message.from_user.id, "Привет, сейчас я расскажу тебе гороскоп на сегодня.")
         # Готовим кнопки
@@ -46,7 +46,9 @@ def get_text_messages(message):
         # Показываем все кнопки сразу и пишем сообщение о выборе
         bot.send_message(message.from_user.id, text='Выбери свой знак зодиака', reply_markup=keyboard)
     elif message.text == "/help":
-        bot.send_message(message.from_user.id, "Напиши Привет")
+        bot.send_message(message.from_user.id, "Напиши Привет или игра")
+    elif message.text == "игра":
+        bot.send_message(message.from_user.id, "@all красавы")
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 

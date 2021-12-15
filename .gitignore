@@ -130,6 +130,6 @@ dmypy.json
 
 # tocken
 secret.py
-/hw2/moscow_parks_links.csv
+/hw2/trip/data/moscow_parks_links.csv
 *_parks_links.csv
 *_parks_reviews.csv
